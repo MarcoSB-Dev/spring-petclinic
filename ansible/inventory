@@ -1,5 +1,5 @@
 [dev]
-192.168.64.2 ansible_user=devops-admin
+192.168.64.2 ansible_user=devops-admin ansible_ssh_private_key_file=/var/jenkins_home/.ssh/id_rsa
 
 
 

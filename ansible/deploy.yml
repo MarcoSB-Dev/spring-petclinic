@@ -1,36 +1,14 @@
+---
 - name: Deploy Spring PetClinic to VM
   hosts: all
   become: true
   tasks:
-    - name: Ensure target directory exists
-      file:
-        path: /home/devops-admin/app
-        state: directory
-        owner: devops-admin
-        mode: '0755'- name: Deploy Spring PetClinic to VM
-  hosts: all
-  become: true
-  tasks:
-    - name: Ensure target directory exists
+    - name: Check if target directory exists
       file:
         path: /home/devops-admin/app
         state: directory
         owner: devops-admin
         mode: '0755'
-
-    - name: Copy .jar to VM
-      copy:
-        src: ../target/spring-petclinic-3.5.0-SNAPSHOT.jar
-        dest: /home/devops-admin/app/spring-petclinic.jar
-        mode: '0755'
-
-    - name: Kill existing Spring Boot process
-      shell: pkill -f 'spring-petclinic.jar' || true
-
-    - name: Run updated Spring Boot app
-      shell: nohup java -jar /home/devops-admin/app/spring-petclinic.jar > /home/devops-admin/app/app.log 2>&1 &
-      args:
-        chdir: /home/devops-admin/app
 
     - name: Copy .jar to VM
       copy:

@@ -1,0 +1,7 @@
+- name: Test connection to VM
+  hosts: dev
+  tasks:
+    - name: Ping the remote VM
+      ansible.builtin.ping:
+
+      

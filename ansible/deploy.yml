@@ -18,6 +18,8 @@
 
     - name: Kill existing Spring Boot process
       shell: pkill -f 'spring-petclinic.jar' || true
+      register: kill_result
+      failed_when: false
 
     - name: Run updated Spring Boot app
       shell: nohup java -jar /home/devops-admin/app/spring-petclinic.jar > /home/devops-admin/app/app.log 2>&1 &

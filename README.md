@@ -170,6 +170,8 @@ Change to test for prometheus integration.
 
 Change to test jenkins build metrics on grafan (not showing up)
 
+change to test zap html report
+
 testing to check for jenkins build metrics on grafana
 
 change to test grafana graphs for both jenkin build and petclinic app
